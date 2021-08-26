@@ -1,11 +1,29 @@
 import { useState } from 'react';
-import { Button, ButtonGroup, Grid } from '@material-ui/core';
+import {
+  Button,
+  ButtonGroup,
+  Grid,
+  makeStyles,
+} from '@material-ui/core';
 import ViewUno from './ViewOne';
 import ViewTwo from './ViewTwo';
+
+const useStyles = makeStyles(() => ({
+  coloredRed: {
+    color: 'magenta',
+    fontSize: '32px',
+  },
+  coloredGreen: {
+    color: 'green',
+    fontSize: '72px',
+  },
+}));
+
 const App = () => {
+  const classes = useStyles();
   const [ currentPage, setCurrentPage ] = useState(1);
   return (
-    <Grid container>
+    <Grid container spacing={2} >
       <Grid item sm={12}>
         <ButtonGroup disableElevation variant="contained" color="primary">
           <Button
@@ -20,7 +38,7 @@ const App = () => {
           </Button>
         </ButtonGroup>
       </Grid>
-      <Grid item sm={12}>
+      <Grid item xs={12}>
         {
           currentPage === 1 ?
             <ViewUno/>
