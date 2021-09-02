@@ -1,14 +1,9 @@
 import { useState, } from 'react';
 export const Counter = (props) => {
-  const [ nameInput, setNameInput ] = useState('');
-  console.log('im rendering');
+
   return (
     <div>
       <h1>Counter: {props.counter}</h1>
-      <input
-        value={nameInput}
-        onChange={(e) => setNameInput(e.target.value)}
-      />
       <button
         onClick={() => props.setCounter(props.counter + 1)}
       >Increment

@@ -2,7 +2,7 @@ import { useState, useEffect, } from 'react';
 import TextField from '@material-ui/core/TextField';
 import { Button, Grid } from '@material-ui/core';
 import axios from 'axios';
-export const ViewOne = () => {
+export const ViewOne = (props) => {
   const [ todoText, setTodoText ] = useState('');
   const [ todos, setTodos ] = useState([]);
   //1st param is function to call after we return html
@@ -28,6 +28,7 @@ export const ViewOne = () => {
   console.log('i am rendering');
   return (
     <>
+      <h1>Counter: {props.counter}</h1>
       <TextField
         fullWidth
         label='Please add a todo'
