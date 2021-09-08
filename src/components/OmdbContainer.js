@@ -6,6 +6,7 @@ import Card from './Card';
 import SearchForm from './SearchForm';
 import MovieDetail from './MovieDetail';
 import API from '../utils/API';
+
 class OmdbContainer extends Component {
   constructor(props) {
     console.log('inside of constructor');
